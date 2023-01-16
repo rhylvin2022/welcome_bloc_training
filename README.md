@@ -1,6 +1,5 @@
 # welcome
-
-A new Flutter project.
+Test project for Hitachi: to understand bloc state management and navigation
 
 ## Getting Started
 
