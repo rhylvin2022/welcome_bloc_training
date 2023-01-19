@@ -5,7 +5,22 @@ import '../../wallet/wallet_bloc.dart';
 
 class WalletCardComponent extends StatelessWidget {
   final int backgroundId;
-  WalletCardComponent({Key? key, required this.backgroundId}) : super(key: key);
+  final String name;
+  final String currency;
+  final String walletType;
+  final CardType cardType;
+  final String amount;
+  final String cardNumber;
+  WalletCardComponent({
+    Key? key,
+    required this.backgroundId,
+    required this.name,
+    required this.currency,
+    required this.walletType,
+    required this.cardType,
+    required this.amount,
+    required this.cardNumber,
+  }) : super(key: key);
 
   bool panDirectionUp = true;
   @override
@@ -74,7 +89,7 @@ class WalletCardComponent extends StatelessWidget {
                       SizedBox(
                         height: 20,
                         child: Text(
-                          state.walletType,
+                          walletType,
                           style: const TextStyle(
                               fontFamily: 'Inter',
                               color: Colors.white,
@@ -89,7 +104,7 @@ class WalletCardComponent extends StatelessWidget {
                           textBaseline: TextBaseline.ideographic,
                           children: [
                             Text(
-                              state.currency,
+                              currency,
                               style: TextStyle(
                                   fontFamily: 'Inter',
                                   color: Colors.white,
@@ -99,7 +114,7 @@ class WalletCardComponent extends StatelessWidget {
                               width: 10,
                             ),
                             Text(
-                              state.showAmount ? state.amount : '__,___.__',
+                              state.showAmount ? amount : '__,___.__',
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 30,
@@ -132,7 +147,7 @@ class WalletCardComponent extends StatelessWidget {
                       SizedBox(
                         height: 20,
                         child: Text(
-                          state.name,
+                          name,
                           style: const TextStyle(
                               fontFamily: 'Inter-Bold',
                               color: Colors.white,
@@ -142,7 +157,7 @@ class WalletCardComponent extends StatelessWidget {
                       SizedBox(
                         height: 20,
                         child: Text(
-                          state.cardNumber,
+                          cardNumber,
                           style: const TextStyle(
                               fontFamily: 'Inter-BOLD',
                               color: Colors.white,
@@ -185,14 +200,14 @@ class WalletCardComponent extends StatelessWidget {
                       textBaseline: TextBaseline.ideographic,
                       children: [
                         Text(
-                          state.walletType,
+                          walletType,
                           style: const TextStyle(
                               fontFamily: 'Inter',
                               color: Colors.white,
                               fontSize: 15),
                         ),
                         Text(
-                          state.name,
+                          name,
                           style: const TextStyle(
                               fontFamily: 'Inter-Bold',
                               color: Colors.white,
@@ -208,7 +223,7 @@ class WalletCardComponent extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              state.currency,
+                              currency,
                               style: TextStyle(
                                   fontFamily: 'Inter',
                                   color: Colors.white,
@@ -218,7 +233,7 @@ class WalletCardComponent extends StatelessWidget {
                               width: 10,
                             ),
                             Text(
-                              state.showAmount ? state.amount : '__,___.__',
+                              state.showAmount ? amount : '__,___.__',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -231,7 +246,7 @@ class WalletCardComponent extends StatelessWidget {
                         SizedBox(
                           height: 20,
                           child: Text(
-                            state.cardNumber,
+                            cardNumber,
                             style: const TextStyle(
                                 fontFamily: 'Inter-BOLD',
                                 color: Colors.white,

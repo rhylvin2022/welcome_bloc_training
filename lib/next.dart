@@ -16,8 +16,6 @@ class _NextScreenState extends State<NextScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    print('wallet init');
-    context.read<WalletBloc>().add(InitWalletData());
   }
 
   @override
@@ -41,14 +39,29 @@ class _NextScreenState extends State<NextScreen> {
               ),
               items: [
                 WalletCardComponent(
-                  backgroundId: 0,
-                ),
+                    backgroundId: 0,
+                    name: "RHYLVIN DALE TINADOR",
+                    currency: 'PHP',
+                    walletType: 'MAIN WALLET',
+                    cardType: CardType.full,
+                    amount: '10,000.00',
+                    cardNumber: '654-3-654222-65-8'),
                 WalletCardComponent(
-                  backgroundId: 1,
-                ),
+                    backgroundId: 1,
+                    name: "RHYLVIN DALE TINADOR",
+                    currency: 'PHP',
+                    walletType: 'SUB WALLET',
+                    cardType: CardType.full,
+                    amount: '99,999.99',
+                    cardNumber: '654-3-654222-65-8'),
                 WalletCardComponent(
-                  backgroundId: 2,
-                ),
+                    backgroundId: 2,
+                    name: "RHYLVIN DALE TINADOR",
+                    currency: 'PHP',
+                    walletType: 'CHILD WALLET',
+                    cardType: CardType.full,
+                    amount: '10,000.00',
+                    cardNumber: '654-3-654222-65-8'),
               ]),
           ElevatedButton(
               onPressed: () => context.read<WalletBloc>().add(ChangeCardType()),

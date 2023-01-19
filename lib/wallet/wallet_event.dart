@@ -8,8 +8,6 @@ abstract class WalletEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class InitWalletData extends WalletEvent {}
-
 class ChangeCardType extends WalletEvent {}
 
 class ShowOrHideAmount extends WalletEvent {}
