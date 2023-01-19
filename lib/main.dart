@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:welcome/cat_bloc/cat_bloc.dart';
 import 'package:welcome/next.dart';
 import 'package:welcome/text_bloc/text_bloc.dart';
+import 'package:welcome/wallet/wallet_bloc.dart';
 import 'package:welcome/welcome.dart';
 
 void main() => runApp(TestApp());
@@ -12,8 +13,15 @@ class TestApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => CatBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => CatBloc(),
+        ),
+        BlocProvider(
+          create: (context) => WalletBloc(),
+        ),
+      ],
       child: MaterialApp(
         routes: {
           '/': (context) => WelcomeScreen(),
